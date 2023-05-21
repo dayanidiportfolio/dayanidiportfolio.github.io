@@ -86,7 +86,7 @@ function sendMessage(event) {
 
 
     function changeMode() {
-     if(window.location.pathname === '/coderview'){
+     if(window.location.pathname === '/coderview/'){
       window.location.pathname = "/normalview";
      }else{
       window.location.pathname = "/coderview";
