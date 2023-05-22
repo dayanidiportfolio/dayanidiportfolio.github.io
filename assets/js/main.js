@@ -42,7 +42,7 @@ function typeNextWord() {
 typeNextWord();
 
 /*==================== Send Message ====================*/
-let token = '5830822420:AAGvhHGM5UIEOKo6hUa4lPQkwoAdnW8i5eQ';
+let token = '5658730618:AAGX_QgZQK-cJK9B88SZ9AHUCYZ7FMkOknk';
 let chatId = '1221832086';
                     
 function sendMessage(event) {
