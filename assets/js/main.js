@@ -1,3 +1,16 @@
+/*==================== TITLE TYPING====================*/
+typeTitle();
+async function typeTitle() {
+  document.title = "";
+  let title = "Welcome to my Portfolio";
+  for (let charIndex = 0; charIndex < title.length; charIndex++) {
+    document.title += title.charAt(charIndex) === " "? `-`: title.charAt(charIndex);
+    await sleep(100);
+  }
+}
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 /*==================== ABOUT TYPING STYLE ====================*/
 const words = ['Web Developer', 'Python Coder', 'Java Coder', "Data analytics", 'IOT Developer'];
 let currentIndex = 0;
