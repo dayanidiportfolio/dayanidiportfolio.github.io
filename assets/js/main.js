@@ -12,7 +12,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 /*==================== ABOUT TYPING STYLE ====================*/
-const words = ['Web Developer', 'Python Coder', 'Java Coder', "Data analytics", 'IOT Developer'];
+const words = ['Python Coder', 'Java Coder','Web Developer', "Data analytics", 'IOT Developer'];
 let currentIndex = 0;
 
 function typeNextWord() {
