@@ -1,3 +1,18 @@
+/*==================== LOADER====================*/
+const loader = document.querySelector('#loader');
+
+// Function to hide the loader after a delay
+function hideLoader() {
+  setTimeout(function() {
+    loader.style.display = 'none';
+  }, 1000); // 1000 milliseconds = 1 second
+}
+
+// Call the hideLoader function after the page has loaded
+window.addEventListener('load', hideLoader);
+
+
+
 /*==================== TITLE TYPING====================*/
 typeTitle();
 async function typeTitle() {
