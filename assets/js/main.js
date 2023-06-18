@@ -1,4 +1,18 @@
-/*==================== LOADER====================*/
+/*==================== TITLE ====================*/
+typeTitle();
+async function typeTitle() {
+  document.title = "";
+  let title = "Welcome to my Portfolio";
+  for (let charIndex = 0; charIndex < title.length; charIndex++) {
+    document.title += title.charAt(charIndex) === " "? `-`: title.charAt(charIndex);
+    await sleep(100);
+  }
+}
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// JavaScript code
 const loader = document.querySelector('#loader');
 
 // Function to hide the loader after a delay
@@ -12,22 +26,21 @@ function hideLoader() {
 window.addEventListener('load', hideLoader);
 
 
+// JavaScript code
+window.addEventListener('load', function() {
+  const img = document.querySelector('#image-to-convert');
+  const asciiArtElement = document.querySelector('#ascii-art');
+  
+  img.addEventListener('load', function() {
+    asciiArtElement.textContent = ASCIIArt.toASCII(img);
+  });
+  
+  img.src = 'D:\Html\Portfolio\assets\images\dayabg.png'; // Replace with the path to your image
+});
 
-/*==================== TITLE TYPING====================*/
-typeTitle();
-async function typeTitle() {
-  document.title = "";
-  let title = "Welcome to my Portfolio";
-  for (let charIndex = 0; charIndex < title.length; charIndex++) {
-    document.title += title.charAt(charIndex) === " "? `-`: title.charAt(charIndex);
-    await sleep(100);
-  }
-}
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+
 /*==================== ABOUT TYPING STYLE ====================*/
-const words = ['Python Coder', 'Java Coder','Web Developer', "Data analytics", 'IOT Developer'];
+const words = ['Web Developer', 'Python Coder', 'Java Coder', "Data analytics", 'IOT Developer'];
 let currentIndex = 0;
 
 function typeNextWord() {
@@ -56,10 +69,15 @@ function typeNextWord() {
 
 typeNextWord();
 
+
+
 /*==================== Send Message ====================*/
-let token = '5658730618:AAGHo2wGfEJvZ5DZxw1MMpxKAw2_8PnXR_Q';
+let token = '5830822420:AAGvhHGM5UIEOKo6hUa4lPQkwoAdnW8i5eQ';
 let chatId = '1221832086';
-                    
+
+
+
+  
 function sendMessage(event) {
   event.preventDefault();
   const button = document.getElementById('sendmessage');
@@ -114,7 +132,7 @@ function sendMessage(event) {
 
 
     function changeMode() {
-     if(window.location.pathname === '/coderview/'){
+     if(window.location.pathname === '/coderview'){
       window.location.pathname = "/normalview";
      }else{
       window.location.pathname = "/coderview";
@@ -191,8 +209,85 @@ const sr = ScrollReveal({
 });
 
 sr.reveal('.home__data, .about__img,.about-data, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img,.button,  .about__subtitle,.qualification1, .qualification2, .qualification3,.quote, .about__text, .skills__img,.contact__label',{delay: 150}); 
-sr.reveal('.home__social-icon,  .contact__information',{ interval: 150}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 150}); 
+sr.reveal('.home__img,.button,  .about__subtitle,.qualification1, .qualification2, .qualification3,.quote, .about__text, .skills__img,.contact__label',{delay: 100}); 
+sr.reveal('.home__social-icon,  .contact__information',{ interval: 100}); 
+sr.reveal('.skills__data, .item, .contact__input',{interval: 100}); 
 
 
+var modalInfo = {
+  1: {
+    title: "Automatic room light visitor counter",
+    info: "The project is an integrated solution that combines a visitor counter, lighting control, and a security system. By utilizing sensors and a camera, the system effectively detects and counts visitors, adjusts lighting levels accordingly, and ensures room safety through motion detection and alerts. This comprehensive solution offers various benefits, including visitor tracking for monitoring footfall, automated lighting control for energy efficiency and convenience, and enhanced security measures for maintaining a safe environment within the room. By seamlessly integrating these functionalities, the project provides a robust and efficient solution for managing visitor traffic, optimizing lighting conditions, and enhancing overall room security.",
+    link: "#",
+    github: "#"
+  },
+  2: {
+    title: "Py-Thanglish",
+    info: "The \"Tamil to Thanglish Converter in Python\" is a package that allows users to convert Tamil text into Thanglish (Tamil written in English script). By installing the Py_Thanglish package and running the provided code examples, users can input Tamil text and obtain the corresponding Thanglish output. The package also includes integration with pyttsx3 for text-to-speech capabilities, enabling Thanglish text to be spoken aloud. This package serves as a beginner-level tool for Tamil to Thanglish conversion, facilitating pyttsx3 to read Tamil text in the form of Thanglish.",
+    link: "https://pypi.org/project/Py-Thanglish/",
+    github: "#"
+  },
+  3: {
+    title: "Sign Language",
+    info: "The project utilizes an IoT camera and Python to enable the transmission of emergency messages. The system captures sign language gestures through the camera, processes them using recognition techniques, and converts them into text messages. By employing Python and IoT technology, this project facilitates urgent communication for sign language users during emergencies. The provided code includes functionality to display text messages based on recognized gestures and interact with the Telegram messaging platform to send messages and photos. This project serves as a valuable tool for facilitating emergency communication for sign language users, ensuring effective and efficient messaging during critical situations.",
+    link: "#",
+    github: "#"
+  },
+  4: {
+    title: "TeleChat Bot",
+    info: '"The File Sharing Portal using a Telegram Bot" is a web application that enables secure and direct file sharing between systems and mobile devices. It leverages a Telegram bot for seamless communication and file transfer. Users can easily upload files of various types and sizes, specify recipients by chat IDs, and enjoy features such as distinct message styles, image and video previews, and organized document display. The portal offers a user-friendly interface, responsive design, and a hassle-free experience for secure file sharing across different devices.'
+    ,
+    link: "https://dayanidicode.github.io/",
+    github: "#"
+  },
+  5: {
+    title: "Smart Lighting System",
+    info: "The \"Smart Lighting System\" is an advanced project that uses face and body recognition technology to automate and optimize lighting control in a room. It adjusts the lights based on the presence and behavior of occupants, offering convenience and energy efficiency. With features such as automatic light activation, dynamic lighting adjustments, and energy-saving mechanisms, it provides an enhanced lighting experience while promoting sustainability. The system can also be integrated with other smart devices for seamless control and customization.",
+    link: "#",
+    github: "#"
+  },
+  6: {
+    title: "Flames",
+    info: "The FLAMES project is a Flutter application designed to recreate the popular FLAMES game, which determines the relationship status between two individuals based on their names. The user interface follows Material Design principles, featuring text fields for entering names and validating inputs for special characters. The FLAMES algorithm calculates the result by removing common characters and counting the remaining characters. The result, accompanied by an image and sound effect, is displayed in an alert dialog. The project utilizes the audioplayers package for audio playback, adding an interactive element to the game. It also includes an About dialog providing information about the app and the author, along with a navigation drawer for easy access. Overall, the FLAMES project offers an enjoyable and engaging experience for users to discover their relationship compatibility.",
+    link: "#",
+    github: "#"
+  }
+};
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// button that opens the modal
+var btn = document.getElementsByClassName("button");
+
+// <span> that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// open modal 
+for(let i = 0; i < btn.length; i++){
+  btn[i].addEventListener("click", function() {
+    var project = btn[i].parentElement;
+    openModal(project);
+  })
+};
+
+function openModal(project){
+  var id = project.id;
+  var img = project.getElementsByTagName("img")[0].src;
+  fillOut(id, img);
+  modal.style.display = "block";
+}
+
+function fillOut(id, img){
+  document.getElementById("title").innerHTML = modalInfo[id].title;
+  document.getElementById("info").innerHTML = modalInfo[id].info;
+  document.getElementById("img").src = img;
+  document.getElementById("site").onclick = function(){
+    window.open(modalInfo[id].link,'_blank');
+  }
+}
+
+// close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
