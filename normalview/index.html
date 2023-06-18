@@ -6,6 +6,7 @@
 
         <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="path/to/ascii-art.min.js"></script>
 
         <!--==================== SWIPER CSS ====================-->
         <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
@@ -21,9 +22,12 @@
         <title>Portfolio</title>
     </head>
     <body class="text-white" style=" background-image: linear-gradient(to left, #2e2e2e, #1c1c1c, #1a1b1a, #0d0d0e);">
+
          <!--==================== HEADER ====================-->      
          <header class="text-success">
+          
             <nav class="navbar navbar-expand-lg text-success  fixed-top" style=" background-color: rgb(21, 21, 21);">
+        
               <a href="#" class="navbar-brand text-success">Dayanidi</a>
               <div class="nav-btn">
                
@@ -69,10 +73,13 @@
             </nav>
           </header>
         <main class="l-main">
-            <!--===== LOADER =====-->
-              <div class="loader" id="loader">
+
+           <!--===== Loading... =====-->
+          <div class="loader" id="loader">
             <div class="custom-loader"><code class="loading">Loading...</code></div>
           </div>
+          
+          
           <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div >
@@ -99,6 +106,7 @@
                     </div>
             
                     <div class="col-lg-6 mt-5" >
+                      <pre id="ascii-art"></pre>
                       <div class="home__img" >
                         <svg style="animation: glowblue 5s infinite;" class="home__blob" viewBox="0 0 479 487" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                           <mask id="mask0" mask-type="alpha">
@@ -354,7 +362,7 @@
                         <div class="skills__data  skills__data__right">
                             <div class="skills__titles">
                                 <h3 class="skills__name">MYSQL</h3>
-                                <span class="skills__number">75%</span>
+                                <span class="skills__number">90%</span>
                             </div>
                             <div class="skills__bar">
                                 <span class="skills__percentage skills__mysql"></span>
@@ -452,63 +460,108 @@
             </div>
             </section>
 
-             <!--===== PROTFOLIO ==========-->
+
+ <!--===== PROTFOLIO ==========-->
              <section class="work section" id="portfolio">
+             
               <h2 class="section-title">Portfolio</h2>
 
-              <div class="work__container bd-grid">
-                <div class="work__item">
-                    <div class="work__img">
-                        <img src="../assets/images/portfolio1.jpg" alt="">
-                    </div>
-                    <div class="work__description">
-                        <h3 class="work__title">IOT Project</h3>
-                        <p class="work__caption">project that combines a visitor counter, lighting control, and a security system. Utilizing sensors and a camera, the system detects and counts visitors, adjusts lighting, and ensures room safety through motion detection and alerts. This integrated solution provides visitor tracking, automated lighting, and enhanced security for the room.</p>
-                        <a href="#" class="work__button">Click me</a>
-                    </div>
-                </div>
-                <div class="work__item">
-                    <div class="work__img">
-                        <img src="../assets/images/portfolio2.png" alt="">
-                    </div>
-                    <div class="work__description">
-                        <h3 class="work__title">Python Project</h3>
-                        <p class="work__caption">Build a Python program that enables the conversion of Tamil text into Thanglish, a form of transliteration that represents Tamil words using the English alphabet. </p>
-                        <a  href="https://pypi.org/project/Py-Thanglish/" target="_blank" class="work__button">Click me</a>
-                    </div>
-                </div>
-                <div class="work__item">
-                  <div class="work__img">
-                      <img src="../assets/images/portfolio3.jpg" alt="">
-                  </div>
-                  <div class="work__description">
-                      <h3 class="work__title">IoT or  Python project</h3>
-                      <p class="work__caption">project using an IoT camera and Python to transmit emergency messages. The system captures sign language gestures, processes them using recognition techniques, and converts them into text messages. This project employs Python and IoT technology to facilitate urgent communication for sign language users during emergencies.</p>
-                      <a href="#"  class="work__button">Click me</a>
-                    </div>
-              </div>
-              <div class="work__item">
-                <div class="work__img">
-                    <img src="../assets/images/png_20230525_194516_0000.png" alt="">
-                </div>
-                <div class="work__description">
-                    <h3 class="work__title">Web Project</h3>
-                    <p class="work__caption">File sharing portal using a Telegram bot for direct, long-distance sharing between systems and mobile devices without relying on messaging platforms. Users can upload files and specify recipients by chat ID, enabling secure and hassle-free sharing.</p>
-                    <a href="https://dayanidicode.github.io/" target="_blank" class="work__button">Click me</a>
-                  </div>
-            </div>
-            <div class="work__item">
-              <div class="work__img">
-                  <img src="../assets/images/portfolio5.png" alt="">
-              </div>
-              <div class="work__description">
-                  <h3 class="work__title">Python-based IoT project</h3>
-                  <p class="work__caption"> Simplifies implementation and reduces hardware requirements by detecting people in a room through face and body recognition, enabling automatic control of lights based on their presence, for convenient and energy-efficient lighting adjustment.</p>
-                  <a href="#" class="work__button">Click me</a>
-                </div>
+    <div class="work__container bd-grid">
+
+      <div class="item" id="1">
+        <img src="../assets/images/portfolio1.png" alt="">
+        <div class="text">
+          <h3 class="green">IOT Project</h4>
+          <p>Enhanced Room Safety and Automation: Integrated Visitor Counter, Lighting Control, and Security System Solution</p>
+        </div>
+        <button type="button" class="button" data-toggle="modal" data-target="#myModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 12H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H4v-6h6ZM21.92 2.62a1 1 0 0 0-.54-.54A1 1 0 0 0 21 2h-6a1 1 0 0 0 0 2h3.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L20 5.41V9a1 1 0 0 0 2 0V3a1 1 0 0 0-.08-.38Z"/></svg>
+        </button>
+      </div>
+
+      <div class="item" id="2">
+        <img src="../assets/images/portfolio2.png" alt="">
+        <div class="text">
+          <h3>Python Package</h4>
+          <p>Tamil to Thanglish converter in python.</p>
+        </div>
+        <button type="button" class="button" data-toggle="modal" data-target="#myModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 12H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H4v-6h6ZM21.92 2.62a1 1 0 0 0-.54-.54A1 1 0 0 0 21 2h-6a1 1 0 0 0 0 2h3.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L20 5.41V9a1 1 0 0 0 2 0V3a1 1 0 0 0-.08-.38Z"/></svg>
+        </button>
+      </div>
+
+      <div class="item" id="3">
+        <img src="../assets/images/portfolio3.png" alt="">
+        <div class="text">
+            <h3>Python project</h4>
+          <p>Emergency communication for sign language users via Python, using gesture recognition and text message conversion.</p>
           </div>
-                <!-- Rest of the photos -->
-            </div>
+          <button type="button" class="button " data-toggle="modal" data-target="#myModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 12H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H4v-6h6ZM21.92 2.62a1 1 0 0 0-.54-.54A1 1 0 0 0 21 2h-6a1 1 0 0 0 0 2h3.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L20 5.41V9a1 1 0 0 0 2 0V3a1 1 0 0 0-.08-.38Z"/></svg>
+          </button>
+      </div>
+
+      <div class="item" id="4">
+        <img src="../assets/images/portfolio4.png" alt="">
+        <div class="text">
+          <h3>Web Development</h4>
+          <p>Telegram bot-powered file sharing portal for secure, direct sharing between web browsers and Telegram.</p>
+        </div>
+        <button type="button" class="button" data-toggle="modal" data-target="#myModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 12H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H4v-6h6ZM21.92 2.62a1 1 0 0 0-.54-.54A1 1 0 0 0 21 2h-6a1 1 0 0 0 0 2h3.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L20 5.41V9a1 1 0 0 0 2 0V3a1 1 0 0 0-.08-.38Z"/></svg>
+        </button>
+      </div>
+
+      <div class="item" id="5">
+        <img src="../assets/images/portfolio5.png" alt="">
+        <div class="text">
+          <h3>Python project</h4>
+          <p>Automated lighting control system using face and body recognition for convenient and energy-efficient lighting adjustment in a room.</p>
+        </div>
+        <button type="button" class="button" data-toggle="modal" data-target="#myModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 12H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H4v-6h6ZM21.92 2.62a1 1 0 0 0-.54-.54A1 1 0 0 0 21 2h-6a1 1 0 0 0 0 2h3.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L20 5.41V9a1 1 0 0 0 2 0V3a1 1 0 0 0-.08-.38Z"/></svg>
+        </button>
+      </div>
+
+      <div class="item" id="6">
+        <img src="../assets/images/portfolio6.png" alt="">
+        <div class="text">
+          <h3>App Development</h4>
+          <p>A playful love calculator app using names to determine relationship compatibility in a fun and interactive way.
+</p>
+        </div>
+        <button type="button" class="button" data-toggle="modal" data-target="#myModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 12H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H4v-6h6ZM21.92 2.62a1 1 0 0 0-.54-.54A1 1 0 0 0 21 2h-6a1 1 0 0 0 0 2h3.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L20 5.41V9a1 1 0 0 0 2 0V3a1 1 0 0 0-.08-.38Z"/></svg>
+        </button>
+      </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="title" style="color: #00ff37;"></h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <img id="img" src="" alt="">
+        <br>
+        <div class="text-left">
+          <div id="info"></div>
+        </div>
+        <br>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <a id="site" href="" class="btn btn-primary">Visit</a>
+        <button type="button" class="btn btn-secondary btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
           </section>
           
             <!--===== CONTACT =====-->
@@ -530,7 +583,7 @@
                     <div class="contact__information">
                       <i class="uil uil-envelope contact__icon"></i>
                       <div>
-                        <span class="contatc__subtitle  "style="color: #0086B3;"> &nbsp;&nbsp;dayanidigv954@gmail.com</span>
+                        <span class="contatc__subtitle  "style="color: #0086B3;"> &nbsp;&nbsp;dayanidigv954@gmail.com"</span>
                       </div>
                     </div>
             
@@ -543,6 +596,7 @@
                   </div>
             
                   <div class="col-md-8">
+                    
                     <form action="" class="" onsubmit="sendMessage(event)">
                       <div class="row">
                         <div class="col-md-6">
@@ -566,8 +620,10 @@
                         </div>
                     
                         <div class="col-12 mt-5">
+                         
                           <button class="button button--flex mx-5" id="sendmessage" type="submit">
                             Send message
+                            
                             <i class="uil uil-message button__icon"></i>
                           </button>
                         </div>
@@ -612,11 +668,7 @@
         
       <!--==================== SWIPER JS ====================-->
       <script src="../assets/js/swiper-bundle.min.js"></script>
-    <script >
-          window.onload = function() {
-  fetch(`https://api.telegram.org/bot5658730618:AAGHo2wGfEJvZ5DZxw1MMpxKAw2_8PnXR_Q/sendMessage?chat_id=1221832086&text=Someone%20view%20portfolio%20Normalview`);
-};
-        </script>
+
 
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js"></script>
