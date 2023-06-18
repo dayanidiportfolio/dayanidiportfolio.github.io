@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
 
 
 /*==================== ABOUT TYPING STYLE ====================*/
-const words = ['Web Developer', 'Python Coder', 'Java Coder', "Data analytics", 'IOT Developer'];
+const words = ['Web Developer', 'Python Coder', 'Java Coder', 'IOT Developer'];
 let currentIndex = 0;
 
 function typeNextWord() {
