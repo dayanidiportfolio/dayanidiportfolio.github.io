@@ -162,7 +162,11 @@ img {
   text-align: center;
 }
 
-
+/*===== SPARK MOUSE MOVING ===== */
+.spark {
+  position: absolute;
+  filter: contrast(100);
+}
 
 /*===== CLASS CSS ===== */
 .section-title {
@@ -397,7 +401,15 @@ q {
   quotes: "“" "”" "‘" "’" "“" "”" '"' "'";
 }
 
-
+@keyframes blink{
+  0%{
+    color: #00ff37;
+  }50%{
+    color: #252525;
+  }100%{
+    color: #00ff37;
+  }
+}
 /*===== HOME =====*/
 .home {
   position: relative;
@@ -475,7 +487,13 @@ q {
   
   
 }
+.blue{
+  color:  #007bff;
+}
 
+.blue1{
+  color: #0086B3;
+}
 
 .button:hover {
   color: #fff;
@@ -502,7 +520,9 @@ q {
   border-radius: .5rem;
 }
 
-
+.blink{
+  animation: blink 0.5s infinite;
+}
 
 
 /*==================== QUALIFICATION ====================*/
@@ -711,8 +731,6 @@ q {
 .skills__mysql {
   width: 75%;
 }
-
-
 
 .skills__close .skills__list {
   height: 0;
