@@ -24,9 +24,8 @@
          <!--==================== HEADER ====================-->      
          <header class="text-success">
             <nav class="navbar navbar-expand-lg text-success  fixed-top" style=" background-color: rgb(21, 21, 21);">
-              <a href="#" class="navbar-brand text-success">Dayanidi</a>
+              <a href="#" class="navbar-brand text-success"></a>
               <div class="nav-btn">
-               
               </div>
               <button class="navbar-toggler text-success" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <i class="uil uil-bars navbar-toggler-icon text-success "></i>
@@ -69,6 +68,12 @@
             </nav>
           </header>
         <main class="l-main">
+
+              <!--===== Loading... =====-->
+          <div class="loader" id="loader">
+            <div class="custom-loader"><code class="loading">Loading...</code></div>
+          </div>
+         
           <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div >
@@ -84,7 +89,7 @@
                             <span style="color: #0086B3;">WHERE</span> <br>
                             <span style="color: #ffffff; animation: glowgreen 2s infinite;">name</span> 
                             <span style="color: #0086B3;">LIKE</span> 
-                            <span style="color: #00ff37; animation: glowgreen 2s infinite;">'%Dayanidi%'</span> 
+                            <span style="color: #00ff37; animation: glowgreen 2s infinite;">'%<Span class="nametag"></span>%'</span> 
                             <span style="color: #0086B3;">AND</span> <br>
                             <span style="color: #ffffff; animation: glowgreen 2s infinite;">passion</span> 
                             <span style="color: #0086B3;">LIKE</span> 
@@ -96,9 +101,8 @@
                       
                       <br> <br> <br>
                       <div class="home__social" style="animation: glowblue 5s infinite;">
-                        <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                        <a href="" class="home__social-icon"><i class='bx bxl-behance'></i></a>
-                        <a href="" class="home__social-icon"><i class='bx bxl-github'></i></a>
+                        <a href="" class="home__social-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                        <a href="" class="home__social-icon" target="_blank"><i class='bx bxl-github'></i></a>
                         
                       </div>
                       <a href="#contact" class="button mb-5" >
@@ -135,15 +139,15 @@
                     
                     <div class="about-data">
                         <h2 class="about__subtitle">I'am basically  <span style="color: #00ff37; animation: glowgreen 2s infinite;">Coder</span> </h2>
-                        <h4 class="about__subtitle">Sometime`s <span style="color: #00ff37;" id="word"></span></h4>
+                        <h4 class="about__subtitle">Sometime`s <span style="color: #00ff37;" id="word"></span><span  class="blink">|</span></h4>
                         <p class="about__text" >
                           <span class="sql" style="padding: 10px; border-radius: 5px; display: inline-block; font-size:smaller;">
                             <span style="color: #0086B3;">UPDATE</span> 
                             <span style="color: #ffffff;">About</span> 
                             <span style="color: #0086B3;">SET</span> 
-                            age = <span style="color:  #0086B3;">19</span>,
-                            occupation = <span class='json-key'>'college student'</span>, 
-                            current_year = <span class='json-key'>'second'</span>, 
+                            age = <span style="color:  #0086B3;"><span id="age"></span>,
+                            occupation = <span class='json-key'>'<span id="occupation"></span>'</span>, 
+                            current_year = <span class='json-key'>'<span id="year"></span>'</span>, 
                             program = <span class='json-key'>'B. Tech'</span>, 
                             field_of_study = <span class='json-key'>'Information Technology'</span>, 
                             institution = <span class='json-key'>'KSR College of Engineering'</span>, 
@@ -153,7 +157,7 @@
                             <span style="color: #0086B3;">WHERE</span> 
                             <span style="color: #ffffff; ">name</span> 
                             <span style="color: #0086B3;">LIKE</span> 
-                            <span style="color: #00ff37; ">'%Dayanidi%'<span style="color: #0086B3;">;</span> </span> 
+                            <span style="color: #00ff37; ">'%<span id="name"></span>%'<span style="color: #0086B3;">;</span> </span> 
                            
                         </span>
                         </p>  
@@ -206,7 +210,7 @@
                         </div>
                         <div>
                           <span class='json-key'>
-                            &nbsp;&nbsp;&nbsp;"Percentage/CGPA" <span class="json-default">:</span> <span class='json-number'>7.5</span>
+                            &nbsp;&nbsp;&nbsp;"Percentage/CGPA" <span class="json-default">:</span> <span class='json-number'><span id="cgpatag"></span></span>
                           </span>
                         </div>
                         <div>
@@ -571,21 +575,21 @@
                     <div class="contact__information">
                       <i class="uil uil-phone-alt contact__icon sql"></i>
                       <div>
-                        <span class="contatc__subtitle "style="color: #0086B3;" ><span class="json-key">call_now(</span> "+919677724053" <span class="json-key">)</span> </span>
+                        <span class="contatc__subtitle "style="color: #0086B3;" ><span class="json-key">call_now(</span> "<span id="phone"></span>" <span class="json-key">)</span> </span>
                       </div>
                     </div>
             
                     <div class="contact__information">
                       <i class="uil uil-envelope contact__icon"></i>
                       <div>
-                        <span class="contatc__subtitle  "style="color: #0086B3;"><span class="json-key">send_mail(</span> "dayanidigv954@gmail.com" <span class="json-key">)</span> </span>
+                        <span class="contatc__subtitle  "style="color: #0086B3;"><span class="json-key">send_mail(</span> "<span id="email"></span>" <span class="json-key">)</span> </span>
                       </div>
                     </div>
             
                     <div class="contact__information">
                       <i class="uil uil-map-marker contact__icon"></i>
                       <div>
-                        <span class="contatc__subtitle " style="color: #0086B3;"><span class="json-key">location(</span> "Salem, Tamilnadu." <span class="json-key">)</span></span>
+                        <span class="contatc__subtitle " style="color: #0086B3;"><span class="json-key">location(</span> "<span id="address"></span>" <span class="json-key">)</span></span>
                       </div>
                     </div>
                   </div>
@@ -634,12 +638,11 @@
               <div class="row">
                   <div class="col-12 text-center mt-3">
                       <div class="social-icons">
-                          <a href="#" class="footer__social-icon"><i class="bx bxl-facebook"></i></a>
-                          <a href="#" class="footer__social-icon"><i class="bx bxl-instagram"></i></a>
-                          <a href="#" class="footer__social-icon"><i class="bx bxl-twitter"></i></a>
+                          <a href="" class="footer__social-icon"><i class="bx bxl-facebook"></i></a>
+                          <a href="" class="footer__social-icon"><i class="bx bxl-instagram"></i></a>
+                          <a href="" class="footer__social-icon"><i class="bx bxl-twitter"></i></a>
                           <a href="" class="footer__social-icon"><i class='bx bxl-linkedin'></i></a>
-                        <a href="" class="footer__social-icon"><i class='bx bxl-github'></i></a>
-                        
+                          <a href="" class="footer__social-icon"><i class='bx bxl-github'></i></a>
                       </div>
                       <p class="footer__text mt-3">&#169; Daya. All rights reserved.</p>
                   </div>
