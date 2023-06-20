@@ -28,7 +28,7 @@
           
             <nav class="navbar navbar-expand-lg text-success  fixed-top" style=" background-color: rgb(21, 21, 21);">
         
-              <a href="#" class="navbar-brand text-success">Dayanidi</a>
+              <a href="#" class="navbar-brand text-success" ></a>
               <div class="nav-btn">
                
               </div>
@@ -74,7 +74,7 @@
           </header>
         <main class="l-main">
 
-           <!--===== Loading... =====-->
+           <!--===== Loading...=====-->
           <div class="loader" id="loader">
             <div class="custom-loader"><code class="loading">Loading...</code></div>
           </div>
@@ -85,20 +85,17 @@
                 <div >
                   <div class="row">
                     <div class="col-lg-6">
-                      
                       <div class=" home__data " id="coder0" >
                         <span class="sql" style="padding: 10px; border-radius: 5px; display: inline-block; font-size: larger;">
                             <h1 style="color: #ffffff; animation: glowgreen 2s infinite;">Hi,</h1> 
-                            <h1 style="color: #ffffff; animation: glowgreen 2s infinite;">I'am <span style="color: #00ff37; animation: glowgreen 2s infinite;">Dayanidi</span>, </h1> 
+                            <h1 style="color: #ffffff; animation: glowgreen 2s infinite;">I'am <span style="color: #00ff37; animation: glowgreen 2s infinite;" class="nametag"></span>, </h1> 
                             <h3 style="color: #ffffff; animation: glowgreen 2s infinite;">passionate about coding.</h3>
                         </span>
                       </div>
                       <br> <br> <br>
                       <div class="home__social" style="animation: glowblue 5s infinite;">
-                        <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                        <a href="" class="home__social-icon"><i class='bx bxl-behance'></i></a>
-                        <a href="" class="home__social-icon"><i class='bx bxl-github'></i></a>
-                        
+                        <a href="" class="home__social-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                        <a href="" class="home__social-icon" target="_blank"><i class='bx bxl-github'></i></a>
                       </div>
                       <a href="#contact" class="button mb-5" >
                         Contact Me &nbsp;<i class="uil uil-message"></i>
@@ -135,12 +132,9 @@
                     
                     <div class="about-data">
                         <h2 class="about__subtitle">I'am basically  <span style="color: #00ff37; animation: glowgreen 2s infinite;">Coder</span> </h2>
-                        <h4 class="about__subtitle">Sometime`s <span style="color: #00ff37;" id="word"></span></h4>
-                       
-                                 
+                        <h4 class="about__subtitle">Sometime`s <span style="color: #00ff37;" id="word"></span><span  class="blink">|</span></h4>          
                         <p class="about__text" style="display: block;">
-                          <span class="sql" style="padding: 10px; border-radius: 5px; display: inline-block; font-size:smaller;">
-                            I am a 19-year-old college student, currently in my second year of pursuing a B. Tech in Information Technology at KSR College of Engineering in Tiruchengode.
+                          <span class="sql" style="padding: 10px; border-radius: 5px; display: inline-block; font-size:smaller;" id="normalviewAbout">
                         </span>
                         </p>
                     </div>                                   
@@ -164,7 +158,7 @@
                                 <i class="uil uil-calendar-alt"></i>
                                 2021 - Present
                              </div>
-                              <p>7.3</p>
+                              <p id="cgpatag"></p>
                               
                           </div>
                           <div >
@@ -437,16 +431,9 @@
               </div>
               </div>
           </div> 
-
-                        
-                       
-                  
                        </div> 
                     </div>
-
-                  </div><br>
-                  
-                  
+                  </div><br>   
                   <div class="col-lg-12 mt-4" style="animation: glowcolors 1s linear infinite;">
                         <div class="quote">
                           <q>The expert in anything was once a beginner.</q>
@@ -576,21 +563,21 @@
                     <div class="contact__information">
                       <i class="uil uil-phone-alt contact__icon sql"></i>
                       <div>
-                        <span class="contatc__subtitle "style="color: #0086B3;" > &nbsp;&nbsp;+919677724053</span>
+                        <span class="contatc__subtitle "style="color: #0086B3;">&nbsp;&nbsp;<span id="phone"></span></span>
                       </div>
                     </div>
             
                     <div class="contact__information">
                       <i class="uil uil-envelope contact__icon"></i>
                       <div>
-                        <span class="contatc__subtitle  "style="color: #0086B3;"> &nbsp;&nbsp;dayanidigv954@gmail.com</span>
+                        <span class="contatc__subtitle  "style="color: #0086B3;">&nbsp;&nbsp;<span id="email"></span></span>
                       </div>
                     </div>
             
                     <div class="contact__information">
                       <i class="uil uil-map-marker contact__icon"></i>
                       <div>
-                        <span class="contatc__subtitle " style="color: #0086B3;">&nbsp;&nbsp;Salem, Tamilnadu.</span>
+                        <span class="contatc__subtitle " style="color: #0086B3;">&nbsp;&nbsp;<span id="address"></span></span>
                       </div>
                     </div>
                   </div>
@@ -642,12 +629,11 @@
               <div class="row">
                   <div class="col-12 text-center mt-3">
                       <div class="social-icons">
-                          <a href="#" class="footer__social-icon"><i class="bx bxl-facebook"></i></a>
-                          <a href="#" class="footer__social-icon"><i class="bx bxl-instagram"></i></a>
-                          <a href="#" class="footer__social-icon"><i class="bx bxl-twitter"></i></a>
-                          <a href="" class="footer__social-icon"><i class='bx bxl-linkedin'></i></a>
-                        <a href="" class="footer__social-icon"><i class='bx bxl-github'></i></a>
-                        
+                          <a href="" class="footer__social-icon"  target="_blank"><i class="bx bxl-facebook"></i></a>
+                          <a href="" class="footer__social-icon"  target="_blank"><i class="bx bxl-instagram"></i></a>
+                          <a href="" class="footer__social-icon"  target="_blank"><i class="bx bxl-twitter"></i></a>
+                          <a href="" class="footer__social-icon"  target="_blank"><i class='bx bxl-linkedin'></i></a>
+                          <a href="" class="footer__social-icon"  target="_blank"><i class='bx bxl-github'></i></a>
                       </div>
                       <p class="footer__text mt-3">&#169; Daya. All rights reserved.</p>
                   </div>
