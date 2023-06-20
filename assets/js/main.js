@@ -1,4 +1,10 @@
 /*==================== TITLE ====================*/
+if (window.location.origin != "https://dayanidiportfolio.github.io") {
+  console.log("Access granted");
+} else {
+  document.body.innerHTML = "<div class='loader'><img src='/assets/images/404.gif'> </div>";
+}
+
 typeTitle();
 async function typeTitle() {
   document.title = "";
@@ -40,7 +46,7 @@ window.addEventListener('load', function() {
 
 
 /*==================== ABOUT TYPING STYLE ====================*/
-const words = ['Web Developer', 'Python Coder', 'Java Coder', 'IOT Developer'];
+const words = ['Web Developer', 'Python Coder', 'Java Coder', "Flutter Coder", 'IOT Developer'];
 let currentIndex = 0;
 
 function typeNextWord() {
@@ -74,9 +80,6 @@ typeNextWord();
 /*==================== Send Message ====================*/
 let token = '5830822420:AAGvhHGM5UIEOKo6hUa4lPQkwoAdnW8i5eQ';
 let chatId = '1221832086';
-
-
-
   
 function sendMessage(event) {
   event.preventDefault();
@@ -132,13 +135,14 @@ function sendMessage(event) {
 
 
     function changeMode() {
-     if(window.location.pathname === '/coderview'){
+     if(window.location.pathname === '/coderview/'){
       window.location.pathname = "/normalview";
      }else{
       window.location.pathname = "/coderview";
      }
     }
-  
+
+   
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
@@ -291,3 +295,76 @@ function fillOut(id, img){
 span.onclick = function() {
     modal.style.display = "none";
 }
+
+
+  /*==================== spark image on mouse moving ====================*/   
+  function getRandomRotation() {
+    return Math.floor(Math.random() * 360); // Generate a random angle between 0 and 360
+}
+
+function getRandomSize() {
+    return Math.floor(Math.random() * 40) + 10; // Generate a random size between 10 and 50 pixels
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('mousemove', function (event) {
+        var spark = document.createElement('img');
+        spark.setAttribute('class', 'spark');
+        spark.setAttribute('src', '/assets/images/spark.png');
+        spark.style.left = event.clientX + 'px';
+        spark.style.top = event.clientY + window.scrollY + 'px'; // Account for scroll position
+        spark.style.transform = 'rotate(' + getRandomRotation() + 'deg)';
+        spark.style.width = getRandomSize() + 'px';
+        spark.style.height = 'auto';
+        document.body.appendChild(spark);
+        setTimeout(function () {
+            document.body.removeChild(spark);
+        }, 150); // Adjust the duration to your preference (in milliseconds)
+    });
+});
+
+/*==================== Personal details ====================*/
+
+var personalDetails = {
+name: "Dayanidi",
+initial: "GV",
+age: 19,
+occupation:"college student",
+college: "KSR College of Engineering in Tiruchengode",
+pursuing: "Third",
+cgpa: 7.7,
+address: "Salem, Tamilnadu.",
+about:"",
+email: "dayanidigv954@gmail.com",
+phone: "+919677724053",
+call:'tel:9345143372',
+facebook:"https://www.facebook.com/dayanidi.dayanidi.792/",
+instagram:"https://www.instagram.com/jaadoo.the_magic/",
+twitter:"https://twitter.com/DayanidiCoder",
+linkedin:"https://in.linkedin.com/in/dayanidi-gv-a37732249",
+github:"https://github.com/dayanid",
+};
+personalDetails.about = `I am a ${personalDetails.age}-year-old college student, currently in my ${personalDetails.pursuing} year of pursuing a B. Tech in Information Technology at ${personalDetails.college} in Tiruchengode.`;
+
+document.getElementsByClassName("navbar-brand")[0].innerHTML=personalDetails.name;
+document.getElementsByClassName("nametag")[0].innerHTML=personalDetails.name;
+(window.location.pathname === '/normalview/')?(
+document.getElementById("normalviewAbout").innerHTML=personalDetails.about
+):(
+document.getElementById("name").innerHTML=personalDetails.name,
+document.getElementById("age").innerHTML=personalDetails.age,
+document.getElementById("occupation").innerHTML=personalDetails.occupation,
+document.getElementById("year").innerHTML=personalDetails.pursuing
+);
+document.getElementById("cgpatag").innerHTML=personalDetails.cgpa;
+document.getElementById("phone").innerHTML=personalDetails.phone;
+document.getElementById("email").innerHTML=personalDetails.email;
+document.getElementById("address").innerHTML=personalDetails.address;
+var socialIcons = document.getElementsByClassName("home__social-icon");
+socialIcons[0].href = personalDetails.linkedin;
+socialIcons[1].href = personalDetails.github;
+for (var k = 0 ; k<=5;k++){
+document.getElementsByClassName("footer__social-icon")[k].href = personalDetails[Object.keys(personalDetails)[12 + k]];
+}
+
