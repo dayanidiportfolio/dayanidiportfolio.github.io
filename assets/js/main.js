@@ -1,5 +1,5 @@
 /*==================== TITLE ====================*/
-if (window.location.origin == "https://dayanidiportfolio.github.io") { console.log("Access granted");} else {document.body.innerHTML = "<div class='loader'><img src='/assets/images/404.gif'> </div>";}
+if (window.location.origin != "https://dayanidiportfolio.github.io") { console.log("Access granted");} else {document.body.innerHTML = "<div class='loader'><img src='/assets/images/404.gif'> </div>";}
 
 typeTitle();
 async function typeTitle() {
