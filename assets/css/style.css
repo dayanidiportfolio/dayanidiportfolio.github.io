@@ -57,6 +57,11 @@ body {
  
 }
 
+.note {
+  color: #00ff37;
+}
+
+
 h1, h2, p {
   margin: 0;
 }
