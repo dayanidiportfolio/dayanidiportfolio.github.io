@@ -1,5 +1,7 @@
+let token = '5658730618:AAGHo2wGfEJvZ5DZxw1MMpxKAw2_8PnXR_Q';
+let chatId = '1221832086';
 /*==================== TITLE ====================*/
-(window.location.origin == "https://dayanidiportfolio.github.io") ?( console.log("Access granted")):(document.body.innerHTML = "<div class='loader'><img src='/assets/images/404.gif'> </div>");
+(window.location.origin == "https://dayanidiportfolio.github.io") ?( console.log("Access granted")):(document.body.innerHTML = "<div class='loader'><img src='/assets/images/404.gif'> </div>",fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=Someone%20Clone%20Portfolio`));
 
 typeTitle();
 async function typeTitle() {
@@ -74,8 +76,7 @@ typeNextWord();
 
 
 /*==================== Send Message ====================*/
-let token = '5830822420:AAGvhHGM5UIEOKo6hUa4lPQkwoAdnW8i5eQ';
-let chatId = '1221832086';
+
   
 function sendMessage(event) {
   event.preventDefault();
