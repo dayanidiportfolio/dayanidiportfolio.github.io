@@ -30,9 +30,23 @@
             <div class="col-12">
               <div class="message-container">
                 <div class="message">
+                     <div class="row">
+                    <div class="col-4 mb-5 text-primary">                  
+                          <div class="">Total Views</div>
+                          <span id="total-views">loading...</span>
+                    </div>
+                    <div class="col-4 mb-5 text-danger">
+                          <div class="">Coder Views</div>
+                          <span id="coder-views">loading...</span>
+                    </div>
+                    <div class="col-4 mb-5 text-warning">
+                          <div class="">Normal Views</div>
+                          <span id="normal-views">loading...</span>
+                    </div>
+                  </div>
                   <h1 >Do you know coding?</h1>
                   <div class="mt-5">
-                    <a href="https://dayanidiportfolio.github.io/coderview" class="btn btn-success mr-5">Yes</a><a href="https://dayanidiportfolio.github.io/normalview" class="btn btn-danger ml-5">No</a>
+                    <a href="/coderview" class="btn btn-success mr-5">Yes</a><a href="normalview" class="btn btn-danger ml-5">No</a>
                   </div>
                 </div>
               </div>
@@ -40,6 +54,36 @@
           </div>
         </div>
         <script src="/assets/js/main.js"></script>
-        <script>fetch('https://api.telegram.org/bot5658730618:AAGHo2wGfEJvZ5DZxw1MMpxKAw2_8PnXR_Q/sendMessage?chat_id=1221832086&text=Someone%20opened%20the%20portfolio')</script>
+         <script type="module">
+         import { db, doc,  getDoc, updateDoc } from "/assets/js/firebase.js";
+           // Read data from the collection
+           const readData = async () => {
+          const documentRef = doc(db, "Portfolio", "B6MRUpOfbx86FX9cGDmB");
+        try {
+    const documentSnapshot = await getDoc(documentRef);
+
+    if (documentSnapshot.exists()) {
+      document.getElementById("total-views").innerHTML=documentSnapshot.data().totalviews;
+      document.getElementById("coder-views").innerHTML=documentSnapshot.data().coderview;
+      document.getElementById("normal-views").innerHTML=documentSnapshot.data().normalview;
+      try {
+      await updateDoc(documentRef,{
+                totalviews:documentSnapshot.data().totalviews+1
+      });
+      console.log("Document successfully updated");
+    } catch (error) {
+      console.error("Error updating document:", error);
+    }
+    } else {
+      console.log("Document does not exist");
+    }
+  } catch (error) {
+    console.error("Error reading document:", error);
+  }
+  fetch('https://api.telegram.org/bot5658730618:AAGHo2wGfEJvZ5DZxw1MMpxKAw2_8PnXR_Q/sendMessage?chat_id=1221832086&text=Someone%20opened%20the%20portfolio')
+};
+  // Call the readData function when needed
+  readData();
+        </script>
     </body>
 </html>
