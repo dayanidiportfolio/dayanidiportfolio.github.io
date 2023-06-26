@@ -342,7 +342,7 @@ twitter:"https://twitter.com/DayanidiCoder",
 linkedin:"https://in.linkedin.com/in/dayanidi-gv-a37732249",
 github:"https://github.com/dayanid",
 };
-personalDetails.about = `I am a ${personalDetails.age}-year-old college student, currently in my ${personalDetails.pursuing} year of pursuing a B. Tech in Information Technology at ${personalDetails.college}.`;
+personalDetails.about = `I am a ${personalDetails.age}-year-old college student, currently in my ${personalDetails.pursuing} year of pursuing a B.Tech in Information Technology at ${personalDetails.college}.`;
 
 document.getElementsByClassName("navbar-brand")[0].innerHTML=personalDetails.name;
 document.getElementsByClassName("nametag")[0].innerHTML=personalDetails.name;
