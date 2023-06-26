@@ -328,21 +328,21 @@ name: "Dayanidi",
 initial: "GV",
 age: 19,
 occupation:"college student",
-college: "KSR College of Engineering in Tiruchengode",
+college: "K.S.R. College of Engineering in Tiruchengode",
 pursuing: "Third",
-cgpa: 7.7,
+cgpa: 7.6,
 address: "Salem, Tamilnadu.",
 about:"",
 email: "dayanidigv954@gmail.com",
 phone: "+919677724053",
-call:'tel:9345143372',
+call:'tel:9677724053',
 facebook:"https://www.facebook.com/dayanidi.dayanidi.792/",
 instagram:"https://www.instagram.com/jaadoo.the_magic/",
 twitter:"https://twitter.com/DayanidiCoder",
 linkedin:"https://in.linkedin.com/in/dayanidi-gv-a37732249",
 github:"https://github.com/dayanid",
 };
-personalDetails.about = `I am a ${personalDetails.age}-year-old college student, currently in my ${personalDetails.pursuing} year of pursuing a B. Tech in Information Technology at ${personalDetails.college} in Tiruchengode.`;
+personalDetails.about = `I am a ${personalDetails.age}-year-old college student, currently in my ${personalDetails.pursuing} year of pursuing a B. Tech in Information Technology at ${personalDetails.college}.`;
 
 document.getElementsByClassName("navbar-brand")[0].innerHTML=personalDetails.name;
 document.getElementsByClassName("nametag")[0].innerHTML=personalDetails.name;
