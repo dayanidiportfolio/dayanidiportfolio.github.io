@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - GLTFloader</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="../main.css">
+    <style>
+      #loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+	<body>
+    <div id="loading">Loading...</div>
+		<div id="info">
+			</div>
+
+		<!-- Import maps polyfill -->
+		<!-- Remove this when import maps will be widely supported -->
+		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../threejs/three.module.js",
+          "three/addons/": "../threejs/jsm/"
+        }
+      }
+    </script>
+    
+    <script type="module">
+
+      import * as THREE from 'three';
+    
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+      import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+    
+      let camera, scene, renderer;
+      let controls; // Declare controls as a global variable
+    
+      init();
+      render();
+    
+      function init() {
+    
+        const container = document.createElement('div');
+        document.body.appendChild(container);
+    
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
+        camera.position.set(0, 0.6, -2.7);
+    
+        scene = new THREE.Scene();
+    
+        new RGBELoader()
+          .setPath('../textures/equirectangular/')
+          .load('puresky.hdr', function (texture) {
+    
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+    
+            scene.background = texture;
+            scene.environment = texture;
+    
+            render();
+    
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+    
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+    
+            // model
+            let loader = new GLTFLoader().setPath('models/gltf/');
+            loader.load('paper1.glb', function (gltf) {
+              const model = gltf.scene;
+              model.rotation.y = Math.PI / 2; // Set initial rotation if needed
+              scene.add(model);
+              render();
+              document.getElementById("loading").style.display="none";
+              // Enable auto-rotation
+              const rotationSpeed = 0.005; // Adjust the rotation speed as desired
+              function animateModel() {
+                model.rotation.y += rotationSpeed;
+                render();
+                requestAnimationFrame(animateModel);
+              }
+              animateModel();
+              container.removeChild(document.getElementById('loading')); // Remove loading text after loading is complete
+            });
+          });
+    
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1;
+        container.appendChild(renderer.domElement);
+    
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.addEventListener('change', render); // use if there is no animation loop
+        controls.minDistance = 15;
+        controls.maxDistance = 15;
+        controls.target.set(0, 0, 0);
+        controls.update();
+    
+        window.addEventListener('resize', onWindowResize);
+    
+        // Add event listener for keyboard input
+        window.addEventListener('keydown', onKeyDown);
+      }
+    
+      function onWindowResize() {
+    
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    
+        render();
+      }
+    
+      // Update camera position based on key presses
+      function onKeyDown(event) {
+        const moveDistance = 0.1; // Adjust the movement distance as desired
+        switch (event.code) {
+          case 'KeyW': // Move forward
+            camera.position.z -= moveDistance;
+            break;
+          case 'KeyS': // Move backward
+            camera.position.z += moveDistance;
+            break;
+          case 'KeyA': // Move left
+            camera.position.x -= moveDistance;
+            break;
+          case 'KeyD': // Move right
+            camera.position.x += moveDistance;
+            break;
+          case 'KeyE': // Move up
+            camera.position.y += moveDistance;
+            break;
+          case 'KeyQ': // Move down
+            camera.position.y -= moveDistance;
+            break;
+        }
+        render();
+      }
+    
+      function render() {
+        renderer.render(scene, camera);
+      }
+    
+    </script>
+    
+    
+	</body>
+</html>
