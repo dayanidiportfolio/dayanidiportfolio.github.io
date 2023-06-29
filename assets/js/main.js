@@ -238,7 +238,7 @@ var modalInfo = {
     title: "TeleChat Bot",
     info: '"The File Sharing Portal using a Telegram Bot" is a web application that enables secure and direct file sharing between systems and mobile devices. It leverages a Telegram bot for seamless communication and file transfer. Users can easily upload files of various types and sizes, specify recipients by chat IDs, and enjoy features such as distinct message styles, image and video previews, and organized document display. The portal offers a user-friendly interface, responsive design, and a hassle-free experience for secure file sharing across different devices.'
     ,
-    link: "https://dayanidicode.github.io/",
+    link: "https://telechatbot.github.io/",
     github: "#"
   },
   5: {
