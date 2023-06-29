@@ -28,7 +28,8 @@ const updateNormalView = async () => {
       if (documentSnapshot.exists()) {
         try {
           await updateDoc(documentRef, {
-            normalview: documentSnapshot.data().normalview + 1
+            normalview: documentSnapshot.data().normalview + 1,
+            totalviews: documentSnapshot.data().totalviews + 1
           });
           console.log("Document successfully updated");
         } catch (error) {
@@ -51,7 +52,8 @@ const updateNormalView = async () => {
       if (documentSnapshot.exists()) {
         try {
           await updateDoc(documentRef, {
-            coderview: documentSnapshot.data().coderview + 1
+            coderview: documentSnapshot.data().coderview + 1,
+            totalviews: documentSnapshot.data().totalviews + 1
           });
           console.log("Document successfully updated");
         } catch (error) {
