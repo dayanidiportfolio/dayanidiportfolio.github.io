@@ -341,9 +341,11 @@ instagram:"https://www.instagram.com/dayanidigv/",
 twitter:"https://twitter.com/DayanidiCoder",
 linkedin:"https://in.linkedin.com/in/dayanidi-gv-a37732249",
 github:"https://github.com/dayanid",
+sendMail:"",
+map:"https://www.google.com/maps/place/11%C2%B034'03.9%22N+78%C2%B007'12.4%22E/@11.5677542,78.1175418,17z/data=!3m1!4b1!4m7!1m2!10m1!1e2!3m3!8m2!3d11.567749!4d78.1201167?entry=ttu"
 };
 personalDetails.about = `I am a ${personalDetails.age}-year-old college student, currently in my ${personalDetails.pursuing} year of pursuing a B.Tech in Information Technology at ${personalDetails.college}.`;
-
+personalDetails.sendMail= `mailto:${personalDetails.email}`
 document.getElementsByClassName("navbar-brand")[0].innerHTML=personalDetails.name;
 document.getElementsByClassName("nametag")[0].innerHTML=personalDetails.name;
 (window.location.pathname === '/normalview/')?(
@@ -356,8 +358,13 @@ document.getElementById("year").innerHTML=personalDetails.pursuing
 );
 document.getElementById("cgpatag").innerHTML=personalDetails.cgpa;
 document.getElementById("phone").innerHTML=personalDetails.phone;
+document.getElementById("call_now").href=personalDetails.call;
+
 document.getElementById("email").innerHTML=personalDetails.email;
+console.log(personalDetails.sendMail)
+document.getElementById("send_mail").href=personalDetails.sendMail;
 document.getElementById("address").innerHTML=personalDetails.address;
+document.getElementById("map").href=personalDetails.map;
 var socialIcons = document.getElementsByClassName("home__social-icon");
 socialIcons[0].href = personalDetails.linkedin;
 socialIcons[1].href = personalDetails.github;
