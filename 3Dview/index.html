@@ -84,7 +84,7 @@
     
             // model
             let loader = new GLTFLoader().setPath('models/gltf/');
-            loader.load('paper1.glb', function (gltf) {
+            loader.load('3Dview.glb', function (gltf) {
               const model = gltf.scene;
               model.rotation.y = Math.PI / 2; // Set initial rotation if needed
               scene.add(model);
