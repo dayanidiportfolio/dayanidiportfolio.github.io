@@ -340,7 +340,7 @@ facebook:"https://www.facebook.com/dayanidi.dayanidi.792/",
 instagram:"https://www.instagram.com/dayanidigv/",
 twitter:"https://twitter.com/DayanidiCoder",
 linkedin:"https://in.linkedin.com/in/dayanidi-gv-a37732249",
-github:"https://github.com/dayanid",
+github:"https://github.com/dayanidigv",
 sendMail:"",
 map:"https://www.google.com/maps/place/11%C2%B034'03.9%22N+78%C2%B007'12.4%22E/@11.5677542,78.1175418,17z/data=!3m1!4b1!4m7!1m2!10m1!1e2!3m3!8m2!3d11.567749!4d78.1201167?entry=ttu"
 };
