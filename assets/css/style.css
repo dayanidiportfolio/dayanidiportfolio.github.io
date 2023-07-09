@@ -734,9 +734,12 @@ q {
 }
 
 .skills__mysql {
-  width: 75%;
+  width: 80%;
 }
 
+.skills__dart {
+  width: 80%;
+}
 .skills__close .skills__list {
   height: 0;
   overflow: hidden;
