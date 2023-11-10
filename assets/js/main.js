@@ -30,21 +30,9 @@ function hideLoader() {
 window.addEventListener('load', hideLoader);
 
 
-// JavaScript code
-window.addEventListener('load', function() {
-  const img = document.querySelector('#image-to-convert');
-  const asciiArtElement = document.querySelector('#ascii-art');
-  
-  img.addEventListener('load', function() {
-    asciiArtElement.textContent = ASCIIArt.toASCII(img);
-  });
-  
-  img.src = 'D:\Html\Portfolio\assets\images\dayabg.png'; // Replace with the path to your image
-});
-
 
 /*==================== ABOUT TYPING STYLE ====================*/
-const words = ['Web Developer', 'Python Coder', 'Java Coder', "Flutter Coder", 'IOT Developer'];
+const words = ['Web Developer', 'IOT Enthusiast', 'Python Coder', 'Java Coder', "Flutter Coder"];
 let currentIndex = 0;
 
 function typeNextWord() {
@@ -359,7 +347,6 @@ document.getElementById("year").innerHTML=personalDetails.pursuing
 document.getElementById("cgpatag").innerHTML=personalDetails.cgpa;
 document.getElementById("phone").innerHTML=personalDetails.phone;
 document.getElementById("call_now").href=personalDetails.call;
-
 document.getElementById("email").innerHTML=personalDetails.email;
 console.log(personalDetails.sendMail)
 document.getElementById("send_mail").href=personalDetails.sendMail;
