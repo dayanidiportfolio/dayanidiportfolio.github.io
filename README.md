@@ -4,7 +4,7 @@ Welcome to my GitHub portfolio! I'm Dayanidi, a passionate coder and aspiring so
 
 ## About Me
 
-I am Dayanidi, a 19-year-old college student currently pursuing a B.Tech in Information Technology at KSR College of Engineering in Tiruchengode, Tamil Nadu. Coding is my passion, and I'm always eager to learn and grow in the field.
+I am Dayanidi, a 20-year-old college student currently pursuing a B.Tech in Information Technology at KSR College of Engineering in Tiruchengode, Tamil Nadu. Coding is my passion, and I'm always eager to learn and grow in the field.
 
 ## Qualification
 
@@ -38,7 +38,6 @@ I have experience and proficiency in various programming languages and technolog
 - MySQL: 90%
 - C: 80%
 - Python: 90%
-- Java: 70%
 
 Remember, mastery comes with practice and dedication.
 
